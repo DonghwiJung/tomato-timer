@@ -4,7 +4,7 @@ import Button from "../Button";
 
 class Timer extends Component {
     render() {
-        console.log(this.props);
+        const { isPlaying, elapsedTime, timerDuration } = this.props;
         return (
             <View style={styles.container}>
                 <StatusBar barStyle={"light-content"} />
@@ -12,8 +12,8 @@ class Timer extends Component {
                     <Text style={styles.time}>25:00</Text>
                 </View>
                 <View style={styles.lower}>
-                    <Button iconName={"play-circle"} onPress={() => alert("Button Clicked!")} />
-                    <Button iconName={"stop-circle"} onPress={() => alert("Button Clicked!")} />
+                    {!isPlaying && <Button iconName={"play-circle"} onPress={() => alert("Button Clicked!")} /> }
+                    {isPlaying && <Button iconName={"stop-circle"} onPress={() => alert("Button Clicked!")} /> }
                 </View>
             </View>
         )
