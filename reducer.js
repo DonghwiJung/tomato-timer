@@ -57,7 +57,7 @@ function applyRestartTimer(state, action) {
     }
 }
 function applyAddSecond(state, action) {
-    if(state.elapsedTime < timeDuration) {
+    if(state.elapsedTime < state.timeDuration) {
         return {
             ...state,
             elapsedTime: state.elapsedTime + 1
